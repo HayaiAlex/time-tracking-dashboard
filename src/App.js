@@ -2,127 +2,22 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import domImg from './images/dom.jpg';
+import Tracker from './components/Tracker';
+import MainCard from './components/MainCard';
 
 function App() {
   return (
     <div className="App">
 
       <div className="dashboard">
-        <div className="main-card">
-          <div className="main-card-header">
-            <img src={domImg} alt="" className='main-card-header-img' />
-            <p>Report for</p>
-            <p className='name'>Jeremy Robson</p>
-          </div>
-          <div className="main-card-times">
-            <p>Daily</p>
-            <p className='active'>Weekly</p>
-            <p>Monthly</p>
-          </div>
-        </div>
+        <MainCard img={domImg} name="Alex Adams" active="Daily" />
 
-        <div className="tracker">
-          <div className="tab tab-work"></div>
-          <div className="tracker-main">
-            <div className="tracker-header">
-              <h2 className='tracker-title'>Work</h2>
-              <FontAwesomeIcon className='tracker-button' icon={faEllipsisH} />
-            </div>
-
-            <p className='tracker-time'>32hrs</p>
-            <div className="tracker-footer">
-              <p className="tracker-time-set">Last Week</p>
-              <p className="tracker-time-other">36hrs</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="tracker">
-          <div className="tab tab-play"></div>
-          <div className="tracker-main">
-            <div className="tracker-header">
-              <h2 className='tracker-title'>Play</h2>
-              <FontAwesomeIcon className='tracker-button' icon={faEllipsisH} />
-            </div>
-
-            <p className='tracker-time'>32hrs</p>
-            <div className="tracker-footer">
-              <p className="tracker-time-set">Last Week</p>
-              <p className="tracker-time-other">36hrs</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="tracker">
-          <div className="tab tab-study"></div>
-          <div className="tracker-main">
-            <div className="tracker-header">
-              <h2 className='tracker-title'>Study</h2>
-              <FontAwesomeIcon className='tracker-button' icon={faEllipsisH} />
-            </div>
-
-            <p className='tracker-time'>32hrs</p>
-            <div className="tracker-footer">
-              <p className="tracker-time-set">Last Week</p>
-              <p className="tracker-time-other">36hrs</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="tracker">
-          <div className="tab tab-exercise"></div>
-          <div className="tracker-main">
-            <div className="tracker-header">
-              <h2 className='tracker-title'>Exercise</h2>
-              <FontAwesomeIcon className='tracker-button' icon={faEllipsisH} />
-            </div>
-
-            <p className='tracker-time'>32hrs</p>
-            <div className="tracker-footer">
-              <p className="tracker-time-set">Last Week</p>
-              <p className="tracker-time-other">36hrs</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="tracker">
-          <div className="tab tab-social"></div>
-          <div className="tracker-main">
-            <div className="tracker-header">
-              <h2 className='tracker-title'>Social</h2>
-              <FontAwesomeIcon className='tracker-button' icon={faEllipsisH} />
-            </div>
-
-            <p className='tracker-time'>32hrs</p>
-            <div className="tracker-footer">
-              <p className="tracker-time-set">Last Week</p>
-              <p className="tracker-time-other">36hrs</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="tracker">
-          <div className="tab tab-selfcare"></div>
-          <div className="tracker-main">
-            <div className="tracker-header">
-              <h2 className='tracker-title'>Self Care</h2>
-              <FontAwesomeIcon className='tracker-button' icon={faEllipsisH} />
-            </div>
-
-            <p className='tracker-time'>32hrs</p>
-            <div className="tracker-footer">
-              <p className="tracker-time-set">Last Week</p>
-              <p className="tracker-time-other">36hrs</p>
-            </div>
-          </div>
-
-        </div>
-
+        <Tracker classType="tab-work" title="Work" time="36hrs" timeSet="Last Month" timeOther="32hrs" />
+        <Tracker classType="tab-play" title="Play" time="36hrs" timeSet="Last Month" timeOther="32hrs" />
+        <Tracker classType="tab-exercise" title="Exercise" time="36hrs" timeSet="Last Month" timeOther="32hrs" />
+        <Tracker classType="tab-social" title="Social" time="36hrs" timeSet="Last Month" timeOther="32hrs" />
+        <Tracker classType="tab-study" title="Study" time="36hrs" timeSet="Last Month" timeOther="32hrs" />
+        <Tracker classType="tab-selfcare" title="Self Care" time="36hrs" timeSet="Last Month" timeOther="32hrs" />
       </div>
 
     </div>
