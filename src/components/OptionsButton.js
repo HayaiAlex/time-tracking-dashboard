@@ -38,12 +38,12 @@ const OptionsButton = () => {
         <FontAwesomeIcon
             onClick={optionsButtonClicked}
             className='tracker-button'
-            icon={open ? faTimes : faEllipsisH}
+            // using displayBlock here rather than open to make animation smooth as different icons have different sizing
+            icon={displayBlock ? faTimes : faEllipsisH}
         />
         <div
             className={'options-button-window ' + (displayBlock ? 'block ' : '') + (open ? 'options-button-window-open' : 'options-button-window-closed')}
         >
-            {/* hidden={open ? '' : true}> */}
             <ul>
                 <OptionsItem name="Edit" />
             </ul>
