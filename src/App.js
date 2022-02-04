@@ -1,10 +1,14 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import domImg from './images/dom.jpg';
 import Tracker from './components/Tracker';
 import MainCard from './components/MainCard';
 
 function App() {
+  useEffect(() => {
+    document.title = "Time Tracker"
+  }, []);
+
   const [data, setData] = useState(fetchData);
   const [active, setActive] = useState('Daily');
 
