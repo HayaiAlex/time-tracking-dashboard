@@ -11,10 +11,12 @@ function Tracker({ classType, title, time, timeSet, timeOther }) {
           <TrackerOptionsButton />
         </div>
 
-        <p className='tracker-time'>{time}</p>
-        <div className="tracker-footer">
-          <p className="tracker-time-set">{timeSet}</p>
-          <p className="tracker-time-other">{timeOther}</p>
+        <div className="tracker-body">
+          <p className='tracker-time'>{time}</p>
+          <div className="tracker-footer">
+            <p className="tracker-time-set">{timeSet}</p>
+            <p className="tracker-time-other">{timeOther}</p>
+          </div>
         </div>
       </div>
 

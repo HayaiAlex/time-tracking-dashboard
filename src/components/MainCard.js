@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MainCardTimeButton from './MainCardTimeButton';
 
 const MainCard = ({ img, name, activeTime, clicked }) => {
@@ -7,8 +7,10 @@ const MainCard = ({ img, name, activeTime, clicked }) => {
         <div className="main-card">
             <div className="main-card-header">
                 <img src={img} alt="" className='main-card-header-img' />
-                <p>Report for</p>
-                <p className='name'>{name}</p>
+                <div className="main-card-name-area">
+                    <p>Report for</p>
+                    <p className='name'>{name}</p>
+                </div>
             </div>
             <div className="main-card-times">
                 <MainCardTimeButton name="Daily" active={activeTime} clicked={clicked} />

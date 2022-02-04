@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import EditForm from './EditForm';
 
 const OptionsItem = ({ name }) => {
 
