@@ -91,6 +91,7 @@ body {
 
 .main-card-times .active {
   color: white;
+  transition: color 200ms ease-in-out;
 }
 
 .tab-work {
@@ -176,7 +177,7 @@ body {
   background: var(--main-card-background-color);
 }
 .options-button-window-closed {
-  animation: close-window 500ms ease-out forwards;
+  animation: close-window 500ms ease-in forwards;
 }
 .options-button-window-open {
   animation: open-window 500ms ease-out forwards;
@@ -214,10 +215,24 @@ body {
 }
 
 .tracker-time {
+  opacity:1;
   text-align: left;
   margin: 0.7rem 0 0.2rem 0;
   font-size: 1.6rem;
   font-weight: 300;
+}
+
+.fade-in {
+  animation: fade-in-animation 1s ease-in;
+}
+
+@keyframes fade-in-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .tracker-footer {

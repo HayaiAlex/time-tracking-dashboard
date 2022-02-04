@@ -1,8 +1,12 @@
 import React from 'react';
 
-const MainCardTimeButton = ({ name, active }) => {
+const MainCardTimeButton = ({ name, active, clicked }) => {
+
     return (
-        <p className={active === name ? 'active' : ''}>{name}</p>
+        <p
+            className={active === name ? 'active' : ''}
+            onClick={clicked}
+        >{name}</p>
     );
 };
 

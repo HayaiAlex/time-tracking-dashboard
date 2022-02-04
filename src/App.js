@@ -1,4 +1,5 @@
 import './App.css';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import domImg from './images/dom.jpg';
@@ -6,18 +7,56 @@ import Tracker from './components/Tracker';
 import MainCard from './components/MainCard';
 
 function App() {
+  const [data, setData] = useState(fetchData);
+  const [active, setActive] = useState('Daily');
+
+  async function fetchData() {
+    console.log('fetching json')
+    const data = await fetch('/data.json');
+    const jsonData = await data.json();
+    console.log(jsonData);
+
+    setData(jsonData);
+  }
+
+  const getData = (index, period, time) => {
+    try {
+      return data[index].timeframes[period][time];
+    } catch {
+      return 0;
+    }
+  }
+
+  const getTrackers = () => {
+    let trackers = [];
+
+    for (let i = 0; i < data.length; i++) {
+      let tracker = <Tracker
+        key={data[i].title}
+        classType={'tab-' + data[i].title.toLowerCase().replace(' ', '')}
+        title={data[i].title}
+        time={`${getData(i, active.toLowerCase(), 'current')}hrs`}
+        timeSet={active}
+        timeOther={`Previously ${getData(i, active.toLowerCase(), 'previous')}`}
+      />
+      trackers.push(tracker);
+    }
+    return trackers;
+  }
+
+  const timeClicked = (e) => {
+    setActive(e.target.innerText)
+  }
+
+
   return (
     <div className="App">
 
       <div className="dashboard">
-        <MainCard img={domImg} name="Alex Adams" active="Daily" />
+        <MainCard img={domImg} name="Alex Adams" activeTime={active} clicked={timeClicked} />
 
-        <Tracker classType="tab-work" title="Work" time="36hrs" timeSet="Last Month" timeOther="32hrs" />
-        <Tracker classType="tab-play" title="Play" time="36hrs" timeSet="Last Month" timeOther="32hrs" />
-        <Tracker classType="tab-exercise" title="Exercise" time="36hrs" timeSet="Last Month" timeOther="32hrs" />
-        <Tracker classType="tab-social" title="Social" time="36hrs" timeSet="Last Month" timeOther="32hrs" />
-        <Tracker classType="tab-study" title="Study" time="36hrs" timeSet="Last Month" timeOther="32hrs" />
-        <Tracker classType="tab-selfcare" title="Self Care" time="36hrs" timeSet="Last Month" timeOther="32hrs" />
+        {getTrackers()}
+
       </div>
 
     </div>
