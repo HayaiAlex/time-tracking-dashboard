@@ -19,7 +19,7 @@
   "scripts": {
     "serve": "json-server --watch data.json --port 3000",
     "start": "react-scripts start",
-    "predeply": "npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
