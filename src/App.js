@@ -1,7 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
 import domImg from './images/dom.jpg';
 import Tracker from './components/Tracker';
 import MainCard from './components/MainCard';
@@ -37,7 +35,7 @@ function App() {
         title={data[i].title}
         time={`${getData(i, active.toLowerCase(), 'current')}hrs`}
         timeSet={active}
-        timeOther={`Previously ${getData(i, active.toLowerCase(), 'previous')}`}
+        timeOther={`${getData(i, active.toLowerCase(), 'previous')}hrs`}
       />
       trackers.push(tracker);
     }
