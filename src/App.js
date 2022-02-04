@@ -14,7 +14,7 @@ function App() {
 
   async function fetchData() {
     console.log('fetching json')
-    const data = await fetch('/data.json');
+    const data = await fetch('https://hayaialex.github.io/time-tracking-dashboard/data.json');
     const jsonData = await data.json();
     console.log(jsonData);
 
