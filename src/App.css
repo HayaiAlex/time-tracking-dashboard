@@ -24,11 +24,14 @@ body {
   background: hsl(226, 43%, 10%);
 }
 
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
 .dashboard {
-  margin: 20vh auto;
-  max-width: 675px;
-  width: 80%;
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 1rem;
@@ -260,6 +263,21 @@ body {
 
 @media screen and (max-width:600px) {
 
+  
+  .App {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  .dashboard {
+    gap:0.5rem;
+    grid-template-columns: 1fr 1fr;
+    width: 95%;
+  }
+
   .main-card {
     grid-column: span 2;
     text-align: left;
@@ -285,8 +303,7 @@ body {
     line-height: 1.3rem;
     font-size: 1.125rem;
     color: rgb(223, 223, 223);;
-  }
-  
+  } 
 
   .main-card-times {
     display: grid;
@@ -305,13 +322,6 @@ body {
     font-size: 0.7rem;
   }
 
-  .dashboard {
-    margin: 3vh auto;
-    width: 90%;
-    gap:0.5rem;
-    grid-template-columns: 1fr 1fr;
-  }
-
   .tracker-body {
     margin-top: 0.2rem;
     margin-bottom:-0.3rem;
@@ -327,7 +337,6 @@ body {
 
 @media screen and (max-width:400px) {
   .dashboard {
-    width: 90%;
     gap:0.5rem;
     grid-template-columns: 1fr;
   }
